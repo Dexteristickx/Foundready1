@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 150 30% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 8%;
+
+    /* Orange Primary */
+    --primary: 20 85% 28%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Light orange secondary */
+    --secondary: 25 30% 95%;
+    --secondary-foreground: 20 85% 28%;
+
+    --muted: 25 20% 95%;
+    --muted-foreground: 20 10% 45%;
+
+    /* Amber Accent */
+    --accent: 28 95% 52%;
+    --accent-foreground: 20 60% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 15% 88%;
+    --input: 25 15% 88%;
+    --ring: 20 85% 28%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 55% 6%;
+    --foreground: 0 0% 95%;
+    --card: 20 45% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 20 45% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 28 95% 52%;
+    --primary-foreground: 20 60% 8%;
+    --secondary: 20 35% 15%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 20 25% 15%;
+    --muted-foreground: 25 15% 60%;
+    --accent: 28 95% 52%;
+    --accent-foreground: 20 60% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 20 25% 20%;
+    --input: 20 25% 20%;
+    --ring: 28 95% 52%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-amber {
+    color: hsl(42, 90%, 55%);
+  }
+  .bg-amber {
+    background-color: hsl(42, 90%, 55%);
+  }
+  .border-amber {
+    border-color: hsl(42, 90%, 55%);
+  }
+  .bg-orange {
+    background-color: hsl(20, 85%, 28%);
+  }
+  .text-orange {
+    color: hsl(20, 85%, 28%);
+  }
+  .bg-orange-dark {
+    background-color: hsl(18, 55%, 12%);
+  }
+  .bg-orange-light {
+    background-color: hsl(25, 30%, 95%);
+  }
+}
