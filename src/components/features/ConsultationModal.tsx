@@ -130,7 +130,7 @@ const ConsultationModal = ({ open, onClose, defaultTier = 2 }: ConsultationModal
                   label="Package Interest"
                   value={form.tierInterest}
                   onChange={(v) => handleChange('tierInterest', v)}
-                  options={['1 — Starter Pack', '2 — Growth Pack', '3 — Regulatory Pack', "I'm not sure yet"]}
+                  options={['0 — The Essentials Pack', '1 — The Pro Pack', '2 — Growth Pack', '3 — Regulatory Pack', "I'm not sure yet"]}
                   placeholder="Which tier?"
                 />
                 <SelectField
@@ -170,7 +170,7 @@ const ConsultationModal = ({ open, onClose, defaultTier = 2 }: ConsultationModal
                 Processing booking...
               </p>
               <p className="text-[hsl(20,10%,45%)] text-sm text-center max-w-xs">
-                Connecting to payment gateway. Please do not close this window.
+                Preparing your booking. Please do not close this window.
               </p>
             </div>
           )}
@@ -188,11 +188,20 @@ const ConsultationModal = ({ open, onClose, defaultTier = 2 }: ConsultationModal
                 Check your email for a confirmation.
               </p>
               <div className="bg-[hsl(25,30%,96%)] border border-[hsl(25,15%,88%)] rounded-lg p-5 text-sm text-left w-full max-w-sm">
+                <p className="font-semibold text-[hsl(20,30%,8%)] mb-2">Direct Transfer Details</p>
+                <div className="space-y-2 text-[hsl(20,10%,40%)] mb-4 bg-white p-3 rounded border">
+                  <p className="text-xs uppercase font-semibold">Bank</p>
+                  <p className="text-sm font-bold text-[hsl(20,85%,28%)]">Providus Bank</p>
+                  <p className="text-xs uppercase font-semibold">Account Number</p>
+                  <p className="text-sm font-bold text-[hsl(20,85%,28%)]">1307912069</p>
+                  <p className="text-xs uppercase font-semibold">Account Name</p>
+                  <p className="text-sm font-bold text-[hsl(20,85%,28%)]">AVIEL-ALPHA SECRETARIES LIMITED</p>
+                </div>
                 <p className="font-semibold text-[hsl(20,30%,8%)] mb-2">Next steps</p>
                 <ul className="space-y-1.5 text-[hsl(20,10%,40%)]">
-                  <li>✓ Confirmation email sent to your inbox</li>
-                  <li>✓ Payment link sent within 1 business day</li>
-                  <li>✓ Calendar invite after payment clears</li>
+                  <li>✓ Transfer the consultation fee to the account above</li>
+                  <li>✓ Send proof of payment to WhatsApp/Email</li>
+                  <li>✓ Calendar invite sent after payment clears</li>
                   <li>✓ Fee fully redeemable within 30 days</li>
                 </ul>
               </div>

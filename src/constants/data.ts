@@ -2,25 +2,43 @@ import type { Tier, FAQItem, JourneyStep } from '@/types';
 
 export const TIERS: Tier[] = [
   {
-    id: 1,
-    name: 'Starter Pack',
-    tagline: 'Everything to launch legally from day one',
-    price: '₦1,000,000',
-    priceNote: 'All-inclusive. Government fees included.',
-    paymentStructure: '₦700,000 now · ₦300,000 on delivery',
-    consultationRequired: 'Optional',
+    id: 0,
+    name: 'The Essentials Pack',
+    tagline: 'Get legally incorporated immediately',
+    price: '₦250,000',
+    priceNote: 'Fixed Price. Statutory fees included.',
+    paymentStructure: '100% Upfront Payment',
+    consultationRequired: 'No (Self-Select)',
     featured: false,
-    ctaLabel: 'Buy Now — ₦700,000',
+    ctaLabel: 'Buy Now — ₦250,000',
     ctaVariant: 'primary',
     sectorSpecific: false,
     regulatoryLicence: false,
     deliverables: [
       'CAC Company Incorporation',
       'Memorandum & Articles of Association (MEMART)',
-      "Founders' / Shareholders' Agreement",
+      "Founders' Agreement",
+      'Non-Disclosure Agreement (NDA)',
+    ],
+  },
+  {
+    id: 1,
+    name: 'TIER 1 — THE PRO PACK',
+    tagline: 'Everything to launch legally from day one',
+    price: '₦1,000,000',
+    priceNote: 'All-inclusive. Government fees included.',
+    paymentStructure: '₦700,000 now · ₦300,000 on delivery',
+    consultationRequired: 'No (Self-Select)',
+    featured: true,
+    ctaLabel: 'Buy Now — ₦700,000',
+    ctaVariant: 'gold',
+    sectorSpecific: false,
+    regulatoryLicence: false,
+    deliverables: [
+      'Everything in Essentials Pack',
+      "Shareholders' Agreement",
       'Terms & Conditions / Terms of Use',
       'Privacy Policy (NDPA 2023 compliant)',
-      'Non-Disclosure Agreement (NDA) Template',
       'Employment Contract Template',
       'Trademark Registration — 1 class',
     ],
@@ -32,14 +50,14 @@ export const TIERS: Tier[] = [
     price: 'From ₦1,500,000',
     priceNote: 'Final price confirmed after consultation.',
     paymentStructure: '70% on confirmation · 30% on delivery',
-    consultationRequired: 'Required (fee redeemable)',
-    featured: true,
+    consultationRequired: 'Yes (Required)',
+    featured: false,
     ctaLabel: 'Book a Consultation',
-    ctaVariant: 'gold',
+    ctaVariant: 'outline',
     sectorSpecific: true,
     regulatoryLicence: false,
     deliverables: [
-      'Everything in Starter Pack',
+      'Everything in Pro Pack',
       'Sector-specific legal documents',
       'Logistics, Fintech, Healthtech, SaaS & more',
       'KYC/AML Policy (where applicable)',
@@ -56,7 +74,7 @@ export const TIERS: Tier[] = [
     price: 'From ₦3,000,000',
     priceNote: 'Pricing confirmed after scoping consultation.',
     paymentStructure: '50% to commence · 25% on submission · 25% on grant',
-    consultationRequired: 'Mandatory',
+    consultationRequired: 'Yes (Mandatory)',
     featured: false,
     ctaLabel: 'Book a Consultation',
     ctaVariant: 'outline',
@@ -82,34 +100,34 @@ export const FAQS: FAQItem[] = [
       'FoundReady is for any Nigerian founder, entrepreneur or small business owner at any stage — whether you are just starting out, already operating without documentation, or scaling and need sector-specific legal protection.',
   },
   {
-    question: 'What is included in Tier 1 (Starter Pack)?',
+    question: 'What is included in Tier 1 (Pro Pack)?',
     answer:
-      'CAC incorporation, MEMART, Founders\' Agreement, Terms & Conditions, Privacy Policy (NDPA-compliant), NDA template, Employment Contract template, and trademark registration in one class — all for ₦1,000,000.',
+      'CAC incorporation, MEMART, Founders\' & Shareholders\' Agreement, Terms & Conditions, Privacy Policy (NDPA-compliant), NDA, Employment Contract template, and trademark registration in one class — all for ₦1,000,000.',
   },
   {
     question: 'Are government fees included?',
     answer:
-      'Yes. For Tier 1, all CAC statutory fees are included for companies with a share capital of up to ₦1,000,000. Companies with higher share capital pay the statutory difference at cost. Trademark Registry fees are included for one class.',
+      'Yes. For Tiers 0 and 1, all CAC statutory fees are included for companies with a share capital of up to ₦1,000,000. Companies with higher share capital pay the statutory difference at cost. Trademark Registry fees are included for Tier 1.',
   },
   {
     question: 'How long does it take?',
     answer:
-      'Legal documents are delivered within 7 to 10 working days. CAC incorporation and trademark registration timelines are subject to the Corporate Affairs Commission and the Trademarks Registry respectively. We keep you updated throughout.',
+      'Legal documents are delivered within 7 to 10 working days. CAC incorporation and trademark registration timelines are subject to the Corporate Affairs Commission and the Trademarks Registry respectively.',
   },
   {
-    question: 'Do I need a consultation for Tier 1?',
+    question: 'Do I need a consultation for Tiers 0 and 1?',
     answer:
-      'No. Tier 1 is self-select — you can purchase it directly on the website. A consultation is recommended but not required for Tier 1.',
+      'No. Tiers 0 and 1 are self-select — you can purchase them directly on the website without a prior consultation.',
   },
   {
     question: 'Why do I need a consultation for Tier 2 and Tier 3?',
     answer:
-      'Because every sector has different legal requirements. The consultation ensures you get exactly the documents your business needs — not a generic pack. The consultation fee is fully redeemable against your package purchase within 30 days.',
+      'Because every sector has different legal requirements. The consultation ensures you get exactly the documents your business needs — not a generic pack.',
   },
   {
     question: 'What is the payment structure?',
     answer:
-      'Tier 1 & Tier 2: 70% upon purchase, 30% on delivery. Tier 3: 50% to commence, 25% on submission of the licence application, 25% on grant of the licence.',
+      'Tier 0: 100% upfront. Tiers 1 & 2: 70% upon purchase, 30% on delivery. Tier 3: 50% to commence, 25% on submission, 25% on grant.',
   },
   {
     question: 'I am already incorporated. Can I still use FoundReady?',
@@ -139,13 +157,13 @@ export const JOURNEY_STEPS: JourneyStep[] = [
     step: 2,
     title: 'Selection or Consultation',
     description:
-      'Select Tier 1 directly, or book a paid consultation for Tier 2 & 3. Our intake form captures your business details and needs.',
+      'Select Tiers 0 or 1 directly, or book a consultation for Tiers 2 & 3. Our intake form captures your business details.',
   },
   {
     step: 3,
     title: 'Payment',
     description:
-      'Pay 70% of the package price securely online. Receive an automated receipt and onboarding email immediately upon payment.',
+      'Pay securely online (100% for Tier 0, 70% for Tiers 1 & 2). Receive an automated receipt immediately.',
   },
   {
     step: 4,

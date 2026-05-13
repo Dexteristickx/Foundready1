@@ -1,5 +1,5 @@
 export interface Tier {
-  id: 1 | 2 | 3;
+  id: 0 | 1 | 2 | 3;
   name: string;
   tagline: string;
   price: string;

@@ -23,6 +23,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
+            <img src="/logo.png" alt="Aviel Alpha Logo" className="h-10 w-auto" />
             <div className="flex flex-col">
               <span className="text-[10px] font-medium text-[hsl(20,10%,45%)] uppercase tracking-widest leading-none">
                 Aviel Alpha Secretaries
@@ -49,7 +50,7 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="https://wa.me/2348000000000"
+              href="https://wa.me/2347072752983"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm font-medium text-[hsl(20,85%,28%)] border border-[hsl(20,85%,28%)] rounded px-4 py-2 hover:bg-[hsl(25,30%,95%)] transition-colors duration-200"
@@ -90,7 +91,7 @@ const Header = () => {
           ))}
           <div className="pt-4 space-y-3 border-t border-[hsl(25,15%,88%)]">
             <a
-              href="https://wa.me/2348000000000"
+              href="https://wa.me/2347072752983"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm font-medium text-[hsl(20,85%,28%)] border border-[hsl(20,85%,28%)] rounded px-4 py-3 w-full justify-center"

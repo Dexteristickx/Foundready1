@@ -7,13 +7,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div>
-              <p className="text-[10px] font-medium text-[hsl(25,20%,60%)] uppercase tracking-widest mb-1">
-                Aviel Alpha Secretaries Limited
-              </p>
-              <h3 className="text-2xl font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Found<span className="text-[hsl(28,95%,52%)]">Ready</span>
-              </h3>
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="Aviel Alpha Logo" className="h-12 w-auto" />
+              <div>
+                <p className="text-[10px] font-medium text-[hsl(25,20%,60%)] uppercase tracking-widest mb-1">
+                  Aviel Alpha Secretaries Limited
+                </p>
+                <h3 className="text-2xl font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  Found<span className="text-[hsl(28,95%,52%)]">Ready</span>
+                </h3>
+              </div>
             </div>
             <p className="text-sm text-[hsl(25,15%,70%)] leading-relaxed max-w-xs">
               Nigeria's Startup Legal & Compliance Pack. Get incorporated. Get documented. Get compliant.
@@ -62,7 +65,7 @@ const Footer = () => {
                 hello@aasecretaries.com.ng
               </a>
               <a
-                href="https://wa.me/2348000000000"
+                href="https://wa.me/2347072752983"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-[hsl(25,15%,70%)] hover:text-white transition-colors duration-200"

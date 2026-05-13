@@ -14,10 +14,12 @@ import ConsultationModal from '@/components/features/ConsultationModal';
 
 const Index = () => {
   const [purchaseOpen, setPurchaseOpen] = useState(false);
+  const [purchaseTier, setPurchaseTier] = useState<0 | 1>(1);
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [consultationTier, setConsultationTier] = useState<2 | 3>(2);
 
-  const handleBuyTier1 = () => {
+  const handleBuyTier = (tier: 0 | 1) => {
+    setPurchaseTier(tier);
     setPurchaseOpen(true);
   };
 
@@ -32,14 +34,15 @@ const Index = () => {
 
       <main className="flex-1">
         <HeroSection
-          onGetStarted={handleBuyTier1}
+          onGetStarted={() => handleBuyTier(1)}
           onBookConsultation={() => handleBookConsultation(2)}
         />
 
         <RegulatorsBanner />
 
         <TierCards
-          onBuyTier1={handleBuyTier1}
+          onBuyTier0={() => handleBuyTier(0)}
+          onBuyTier1={() => handleBuyTier(1)}
           onBookConsultation={handleBookConsultation}
         />
 
@@ -59,6 +62,7 @@ const Index = () => {
       <PurchaseModal
         open={purchaseOpen}
         onClose={() => setPurchaseOpen(false)}
+        tier={purchaseTier}
       />
 
       <ConsultationModal

@@ -6,11 +6,12 @@ import { toast } from 'sonner';
 interface PurchaseModalProps {
   open: boolean;
   onClose: () => void;
+  tier?: 0 | 1;
 }
 
 type Step = 'form' | 'processing' | 'success';
 
-const PurchaseModal = ({ open, onClose }: PurchaseModalProps) => {
+const PurchaseModal = ({ open, onClose, tier = 1 }: PurchaseModalProps) => {
   const [step, setStep] = useState<Step>('form');
   const [form, setForm] = useState({
     fullName: '',
@@ -69,13 +70,17 @@ const PurchaseModal = ({ open, onClose }: PurchaseModalProps) => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-[hsl(20,85%,28%)] px-6 py-5 flex items-center justify-between shrink-0">
+        <div className="bg-[hsl(24,100%,45%)] px-6 py-5 flex items-center justify-between shrink-0">
           <div>
-            <p className="text-[hsl(42,90%,62%)] text-xs font-semibold uppercase tracking-widest">Tier 1 — Starter Pack</p>
+            <p className="text-[hsl(25,30%,95%)] text-xs font-semibold uppercase tracking-widest">
+              {tier === 0 ? 'Tier 0 — The Essentials Pack' : 'Tier 1 — The Pro Pack'}
+            </p>
             <h3 className="text-white text-xl font-bold mt-1" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Purchase FoundReady — ₦1,000,000
+              Purchase FoundReady — {tier === 0 ? '₦250,000' : '₦1,000,000'}
             </h3>
-            <p className="text-[hsl(25,15%,70%)] text-xs mt-1">Initial payment: ₦700,000 · Balance ₦300,000 on delivery</p>
+            <p className="text-[hsl(25,15%,85%)] text-xs mt-1">
+              {tier === 0 ? '100% upfront payment' : 'Initial payment: ₦700,000 · Balance ₦300,000 on delivery'}
+            </p>
           </div>
           <button onClick={handleClose} className="text-[hsl(25,15%,70%)] hover:text-white transition-colors p-1">
             <X size={20} />
@@ -127,23 +132,27 @@ const PurchaseModal = ({ open, onClose }: PurchaseModalProps) => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field label="Director 1 Full Name" value={form.director1} onChange={(v) => handleChange('director1', v)} placeholder="First director's name" />
                 <Field label="Share Structure" value={form.shareStructure} onChange={(v) => handleChange('shareStructure', v)} placeholder="e.g. 60/40 or equal shares" />
-                <Field label="Brand Name for Trademark" value={form.brandName} onChange={(v) => handleChange('brandName', v)} placeholder="Name or logo to trademark" />
-                <Field label="Trademark Class" value={form.trademarkClass} onChange={(v) => handleChange('trademarkClass', v)} placeholder="e.g. Class 35 (Business Services)" />
+                {tier === 1 && (
+                  <>
+                    <Field label="Brand Name for Trademark" value={form.brandName} onChange={(v) => handleChange('brandName', v)} placeholder="Name or logo to trademark" />
+                    <Field label="Trademark Class" value={form.trademarkClass} onChange={(v) => handleChange('trademarkClass', v)} placeholder="e.g. Class 35 (Business Services)" />
+                  </>
+                )}
               </div>
 
               <TextareaField label="Additional Notes" value={form.notes} onChange={(v) => handleChange('notes', v)} placeholder="Any other information..." />
 
               <div className="bg-[hsl(25,30%,96%)] border border-[hsl(25,15%,88%)] rounded-lg p-4 text-xs text-[hsl(20,10%,40%)] leading-relaxed">
-                By submitting this form, you agree to proceed with payment of ₦700,000 (70% of the ₦1,000,000 package price).
-                The balance of ₦300,000 will be due upon delivery of your documents. All information is handled in strict
+                By submitting this form, you agree to proceed with payment of {tier === 0 ? '₦250,000 (100% of the package price)' : '₦700,000 (70% of the ₦1,000,000 package price)'}.
+                {tier === 1 && ' The balance of ₦300,000 will be due upon delivery of your documents.'} All information is handled in strict
                 confidence per our Privacy Policy and the Nigeria Data Protection Act 2023.
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[hsl(20,85%,28%)] hover:bg-[hsl(20,85%,22%)] text-white font-semibold py-4 rounded-lg transition-colors duration-200 text-sm shadow-md hover:shadow-lg"
+                className="w-full bg-[hsl(24,100%,45%)] hover:bg-[hsl(24,100%,40%)] text-white font-semibold py-4 rounded-lg transition-colors duration-200 text-sm shadow-md hover:shadow-lg"
               >
-                Proceed to Payment — ₦700,000
+                Proceed to Payment — {tier === 0 ? '₦250,000' : '₦700,000'}
               </button>
             </form>
           )}
@@ -155,7 +164,7 @@ const PurchaseModal = ({ open, onClose }: PurchaseModalProps) => {
                 Processing your order...
               </p>
               <p className="text-[hsl(20,10%,45%)] text-sm text-center max-w-xs">
-                Connecting to payment gateway. Please do not close this window.
+                Preparing your order. Please do not close this window.
               </p>
             </div>
           )}
@@ -173,10 +182,19 @@ const PurchaseModal = ({ open, onClose }: PurchaseModalProps) => {
                 payment and begin the onboarding process. Check your email for a confirmation receipt.
               </p>
               <div className="bg-[hsl(25,30%,96%)] border border-[hsl(25,15%,88%)] rounded-lg p-5 text-sm text-left w-full max-w-sm">
+                <p className="font-semibold text-[hsl(20,30%,8%)] mb-2">Direct Transfer Details</p>
+                <div className="space-y-2 text-[hsl(20,10%,40%)] mb-4 bg-white p-3 rounded border">
+                  <p className="text-xs uppercase font-semibold">Bank</p>
+                  <p className="text-sm font-bold text-[hsl(20,85%,28%)]">Providus Bank</p>
+                  <p className="text-xs uppercase font-semibold">Account Number</p>
+                  <p className="text-sm font-bold text-[hsl(20,85%,28%)]">1307912069</p>
+                  <p className="text-xs uppercase font-semibold">Account Name</p>
+                  <p className="text-sm font-bold text-[hsl(20,85%,28%)]">AVIEL-ALPHA SECRETARIES LIMITED</p>
+                </div>
                 <p className="font-semibold text-[hsl(20,30%,8%)] mb-2">What happens next?</p>
                 <ul className="space-y-1.5 text-[hsl(20,10%,40%)]">
-                  <li>✓ Confirmation email sent to your inbox</li>
-                  <li>✓ Payment link will follow within 1 hour</li>
+                  <li>✓ Transfer the amount to the account above</li>
+                  <li>✓ Send proof of payment to WhatsApp/Email</li>
                   <li>✓ Onboarding begins after payment clears</li>
                   <li>✓ Documents delivered in 7–10 working days</li>
                 </ul>

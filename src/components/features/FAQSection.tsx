@@ -62,7 +62,7 @@ const FAQSection = () => {
           <p className="text-sm text-[hsl(20,10%,45%)] mb-4">Still have questions?</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/2348000000000"
+              href="https://wa.me/2347072752983"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[hsl(20,85%,28%)] hover:bg-[hsl(20,85%,22%)] text-white font-semibold text-sm px-6 py-3 rounded-lg transition-colors duration-200"
