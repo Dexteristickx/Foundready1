@@ -48,7 +48,7 @@ const Index = () => {
 
       <main className="flex-1">
         <HeroSection
-          onGetStarted={() => handleBuyTier(1)}
+          onGetStarted={() => handleBuyTier(0)}
           onBookConsultation={() => handleBookConsultation(2)}
         />
 

@@ -57,7 +57,7 @@ const HeroSection = ({ onGetStarted, onBookConsultation }: HeroSectionProps) => 
               onClick={onGetStarted}
               className="inline-flex items-center justify-center gap-2 bg-[hsl(28,95%,52%)] hover:bg-[hsl(28,95%,44%)] text-white font-semibold text-base px-8 py-4 rounded transition-all duration-200 shadow-lg hover:shadow-xl"
             >
-              Get Started — from ₦1,000,000
+              Get Started — from ₦250,000
             </button>
             <button
               onClick={onBookConsultation}
