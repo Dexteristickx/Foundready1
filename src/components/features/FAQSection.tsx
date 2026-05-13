@@ -67,7 +67,7 @@ const FAQSection = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[hsl(20,85%,28%)] hover:bg-[hsl(20,85%,22%)] text-white font-semibold text-sm px-6 py-3 rounded-lg transition-colors duration-200"
             >
-              Chat on WhatsApp
+              Contact Support
             </a>
             <a
               href="mailto:hello@aasecretaries.com.ng"

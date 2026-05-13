@@ -71,7 +71,16 @@ const Footer = () => {
                 className="flex items-center gap-2 text-sm text-[hsl(25,15%,70%)] hover:text-white transition-colors duration-200"
               >
                 <ExternalLink size={14} className="text-[hsl(28,95%,52%)] shrink-0" />
-                WhatsApp Direct Line
+                WhatsApp (Support)
+              </a>
+              <a
+                href="https://wa.me/2349019011976"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-[hsl(25,15%,70%)] hover:text-white transition-colors duration-200"
+              >
+                <ExternalLink size={14} className="text-[hsl(28,95%,52%)] shrink-0" />
+                WhatsApp (Advisory)
               </a>
               <a
                 href="https://www.aasecretaries.com.ng"
