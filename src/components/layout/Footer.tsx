@@ -92,7 +92,25 @@ const Footer = () => {
                 www.aasecretaries.com.ng
               </a>
             </div>
-            <div className="pt-4">
+          <div className="space-y-4">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-[hsl(28,95%,52%)]">
+              Direct Transfer Details
+            </h4>
+            <div className="bg-[hsl(20,30%,18%)] p-4 rounded-lg border border-[hsl(20,30%,25%)] space-y-2">
+              <div className="flex justify-between items-center text-[10px] uppercase font-bold text-[hsl(25,10%,50%)]">
+                <span>Bank</span>
+                <span className="text-white">Providus Bank</span>
+              </div>
+              <div className="flex justify-between items-center text-[10px] uppercase font-bold text-[hsl(25,10%,50%)]">
+                <span>Account</span>
+                <span className="text-white">1307912069</span>
+              </div>
+              <div className="text-[10px] uppercase font-bold text-[hsl(25,10%,50%)]">
+                <span>Account Name</span>
+                <p className="text-[11px] text-white mt-1 leading-tight uppercase font-black">AVIEL-ALPHA SECRETARIES LIMITED</p>
+              </div>
+            </div>
+            <div className="pt-2">
               <p className="text-xs text-[hsl(25,10%,50%)] leading-relaxed">
                 Backed by the legal expertise of{' '}
                 <span className="text-[hsl(25,15%,70%)]">Aviel Avenante Law Practice (AALP)</span>
