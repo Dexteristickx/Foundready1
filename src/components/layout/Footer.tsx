@@ -57,11 +57,11 @@ const Footer = () => {
             </h4>
             <div className="space-y-3">
               <a
-                href="mailto:hello@aasecretaries.com.ng"
+                href="mailto:talk@aasecretaries.com.ng"
                 className="flex items-center gap-2 text-sm text-[hsl(25,15%,70%)] hover:text-white transition-colors duration-200"
               >
                 <Mail size={14} className="text-[hsl(28,95%,52%)] shrink-0" />
-                hello@aasecretaries.com.ng
+                talk@aasecretaries.com.ng
               </a>
               <a
                 href="https://wa.me/2347072752983"

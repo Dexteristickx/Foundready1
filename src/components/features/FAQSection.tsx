@@ -70,7 +70,7 @@ const FAQSection = () => {
               Contact Support
             </a>
             <a
-              href="mailto:hello@aasecretaries.com.ng"
+              href="mailto:talk@aasecretaries.com.ng"
               className="inline-flex items-center justify-center gap-2 border-2 border-[hsl(20,85%,28%)] text-[hsl(20,85%,28%)] hover:bg-[hsl(25,30%,95%)] font-semibold text-sm px-6 py-3 rounded-lg transition-colors duration-200"
             >
               Send an Email
