@@ -6,7 +6,6 @@ import HeroSection from '@/components/features/HeroSection';
 import TierCards from '@/components/features/TierCards';
 import HowItWorks from '@/components/features/HowItWorks';
 import ConsultationSection from '@/components/features/ConsultationSection';
-import TestimonialsSection from '@/components/features/TestimonialsSection';
 import FAQSection from '@/components/features/FAQSection';
 import RegulatorsBanner from '@/components/features/RegulatorsBanner';
 import WhatsAppCTA from '@/components/features/WhatsAppCTA';
@@ -64,7 +63,6 @@ const Index = () => {
 
         <ConsultationSection onBookConsultation={() => handleBookConsultation(2)} />
 
-        <TestimonialsSection />
 
         <FAQSection />
       </main>
