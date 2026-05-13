@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-[hsl(18,55%,12%)] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -50,7 +50,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
           {/* Contact */}
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-widest text-[hsl(28,95%,52%)]">
@@ -92,9 +91,12 @@ const Footer = () => {
                 www.aasecretaries.com.ng
               </a>
             </div>
+          </div>
+
+          {/* Bank Details */}
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-widest text-[hsl(28,95%,52%)]">
-              Direct Transfer Details
+              Direct Transfer
             </h4>
             <div className="bg-[hsl(20,30%,18%)] p-4 rounded-lg border border-[hsl(20,30%,25%)] space-y-2">
               <div className="flex justify-between items-center text-[10px] uppercase font-bold text-[hsl(25,10%,50%)]">
@@ -109,12 +111,6 @@ const Footer = () => {
                 <span>Account Name</span>
                 <p className="text-[11px] text-white mt-1 leading-tight uppercase font-black">AVIEL-ALPHA SECRETARIES LIMITED</p>
               </div>
-            </div>
-            <div className="pt-2">
-              <p className="text-xs text-[hsl(25,10%,50%)] leading-relaxed">
-                Backed by the legal expertise of{' '}
-                <span className="text-[hsl(25,15%,70%)]">Aviel Avenante Law Practice (AALP)</span>
-              </p>
             </div>
           </div>
         </div>
