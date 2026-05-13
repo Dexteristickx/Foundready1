@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/features/HeroSection';
@@ -11,12 +12,21 @@ import RegulatorsBanner from '@/components/features/RegulatorsBanner';
 import WhatsAppCTA from '@/components/features/WhatsAppCTA';
 import PurchaseModal from '@/components/features/PurchaseModal';
 import ConsultationModal from '@/components/features/ConsultationModal';
+import SplashScreen from '@/components/layout/SplashScreen';
 
 const Index = () => {
+  const [loading, setLoading] = useState(true);
   const [purchaseOpen, setPurchaseOpen] = useState(false);
   const [purchaseTier, setPurchaseTier] = useState<0 | 1>(1);
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [consultationTier, setConsultationTier] = useState<2 | 3>(2);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleBuyTier = (tier: 0 | 1) => {
     setPurchaseTier(tier);
@@ -30,6 +40,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <AnimatePresence>
+        {loading && <SplashScreen />}
+      </AnimatePresence>
+
       <Header />
 
       <main className="flex-1">
