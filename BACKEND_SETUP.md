@@ -31,9 +31,8 @@ This will store all consultation bookings.
 ### Environment Variables
 Create a `.env` file in your root directory (or add to your Vercel project settings) with these keys:
 ```env
-VITE_SUPABASE_URL=your_project_url
-VITE_SUPABASE_ANON_KEY=your_anon_key
-```
+VITE_SUPABASE_URL=https://gfqzvdtmnxobfyvfvhzk.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmcXp2ZHRtbnhvYmZ5dmZ2aHprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTI3ODksImV4cCI6MjA5NDI4ODc4OX0.3ZW8Vap1RPutqTFkySfehmZumpBaOhgtLxEWn14vo8Y
 
 ---
 
