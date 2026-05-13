@@ -53,11 +53,11 @@ const ConsultationModal = ({ open, onClose, defaultTier = 2 }: ConsultationModal
 
         setStep('success');
         toast.success('Consultation booking received!');
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error submitting inquiry:', error);
-        // Fallback to success state for demo purposes if DB is not set up
         setStep('success');
-        toast.success('Booking received! (Demo Mode)');
+        toast.error(`Booking failed: ${error.message || 'Unknown error'}`);
+        toast.success('Proceeding in Demo Mode...');
       }
     };
 

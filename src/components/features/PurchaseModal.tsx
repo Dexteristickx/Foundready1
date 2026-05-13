@@ -60,11 +60,11 @@ const PurchaseModal = ({ open, onClose, tier = 1 }: PurchaseModalProps) => {
 
         setStep('success');
         toast.success('Purchase initiated successfully!');
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error submitting order:', error);
-        // Fallback to success state for demo purposes if DB is not set up
         setStep('success');
-        toast.success('Purchase initiated! (Demo Mode)');
+        toast.error(`Purchase failed: ${error.message || 'Unknown error'}`);
+        toast.success('Proceeding in Demo Mode...');
       }
     };
 
