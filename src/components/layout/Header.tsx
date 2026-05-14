@@ -41,15 +41,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Aviel Alpha Logo" className="h-10 w-auto" />
-            <div className="flex flex-col">
-              <span className="text-[10px] font-medium text-[hsl(20,10%,45%)] uppercase tracking-widest leading-none">
-                Aviel Alpha Secretaries
-              </span>
-              <span className="text-xl font-bold text-[hsl(20,85%,28%)] leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Found<span className="text-[hsl(28,95%,52%)]">Ready</span>
-              </span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="FoundReady Logo" 
+              className="h-12 w-auto object-contain" 
+            />
           </div>
 
           {/* Desktop Nav */}

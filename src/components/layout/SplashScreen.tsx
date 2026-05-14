@@ -8,7 +8,7 @@ const SplashScreen = () => {
         opacity: 0,
         transition: { duration: 0.8, ease: "easeInOut" }
       }}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[hsl(24,100%,45%)]"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-[hsl(20,85%,12%)]"
     >
       <div className="relative flex flex-col items-center">
         {/* Animated Logo Container */}
@@ -22,26 +22,26 @@ const SplashScreen = () => {
               ease: "easeOut"
             }
           }}
-          className="relative w-32 h-32 mb-8"
+          className="relative w-48 h-32 mb-8"
         >
           {/* Pulsing ring */}
           <motion.div
             animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.5, 0.2, 0.5]
+              scale: [1, 1.1, 1],
+              opacity: [0.3, 0.1, 0.3]
             }}
             transition={{ 
               duration: 2, 
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute inset-0 rounded-full bg-white/20"
+            className="absolute inset-0 rounded-2xl bg-white/10"
           />
           
           {/* The Logo */}
           <img 
             src="/logo.png" 
-            alt="Aviel Alpha Logo" 
+            alt="FoundReady Logo" 
             className="w-full h-full object-contain relative z-10"
           />
         </motion.div>
@@ -56,9 +56,6 @@ const SplashScreen = () => {
           }}
           className="text-center"
         >
-          <h1 className="text-white text-3xl font-bold tracking-tight mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Found<span className="text-orange-200">Ready</span>
-          </h1>
           <div className="flex items-center gap-2 justify-center">
             <motion.div
               animate={{ 
@@ -68,9 +65,9 @@ const SplashScreen = () => {
                 duration: 2,
                 ease: "easeInOut"
               }}
-              className="h-[2px] bg-white/40 w-24 overflow-hidden"
+              className="h-[2px] bg-[hsl(28,95%,52%)]/40 w-32 overflow-hidden"
             >
-              <div className="h-full bg-white w-full" />
+              <div className="h-full bg-[hsl(28,95%,52%)] w-full" />
             </motion.div>
           </div>
           <p className="text-orange-100 text-xs mt-4 uppercase tracking-[0.2em] font-medium">
