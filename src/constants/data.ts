@@ -116,12 +116,12 @@ export const FAQS: FAQItem[] = [
   {
     question: 'Do I need a consultation for Tiers 0 and 1?',
     answer:
-      'No. Tiers 0 and 1 are self-select — you can purchase them directly on the website without a prior consultation.',
+      'No. Tiers 0 and 1 are self-select — you can purchase them directly on the website without a prior consultation. Note: Consultation fees are NOT redeemable against Tier 0.',
   },
   {
     question: 'Why do I need a consultation for Tier 2 and Tier 3?',
     answer:
-      'Because every sector has different legal requirements. The consultation ensures you get exactly the documents your business needs — not a generic pack. The ₦100,000 fee is fully redeemable against Tiers 1, 2, or 3 (Excludes Tier 0).',
+      'Because every sector has different legal requirements. The consultation ensures you get exactly the documents your business needs. The ₦100,000 fee is fully redeemable against Tiers 1, 2, or 3 (Note: Redemption strictly excludes Tier 0).',
   },
   {
     question: 'What is the payment structure?',
