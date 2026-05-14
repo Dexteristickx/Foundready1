@@ -3,7 +3,7 @@ const TrustSection = () => {
     { 
       name: "CAC", 
       label: "Accredited Agents", 
-      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Corporate_Affairs_Commission_Logo.png/220px-Corporate_Affairs_Commission_Logo.png" 
+      logo: "https://upload.wikimedia.org/wikipedia/en/0/05/Corporate_Affairs_Commission_Logo.png" 
     },
     { 
       name: "NBA", 
@@ -37,24 +37,27 @@ const TrustSection = () => {
           </div>
 
           {/* Badges Grid */}
-          <div className="flex flex-wrap justify-center md:justify-end items-center gap-8 md:gap-16">
+          <div className="flex flex-wrap justify-center md:justify-end items-center gap-6 md:gap-10">
             {trustItems.map((item) => (
               <div 
                 key={item.name} 
                 className="flex flex-col items-center group transition-all duration-300"
               >
-                <div className="h-12 w-auto mb-2 flex items-center justify-center">
+                <div className="h-16 w-24 md:w-32 bg-[hsl(25,30%,98%)] border border-[hsl(25,15%,90%)] rounded-xl p-3 mb-2 flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:border-[hsl(28,95%,52%)] transition-all duration-300">
                   <img 
                     src={item.logo} 
                     alt={item.name} 
-                    className="h-full w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                    className="h-full w-full object-contain transition-all duration-300"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
-                      (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="text-xl font-black">${item.name}</span>`;
+                      const parent = (e.target as HTMLImageElement).parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<span class="text-lg font-black text-[hsl(20,85%,28%)]">${item.name}</span>`;
+                      }
                     }}
                   />
                 </div>
-                <div className="text-[10px] uppercase font-bold tracking-widest text-[hsl(25,10%,50%)] group-hover:text-[hsl(28,95%,52%)] transition-colors">
+                <div className="text-[9px] uppercase font-bold tracking-widest text-[hsl(25,10%,50%)] group-hover:text-[hsl(28,95%,52%)] transition-colors">
                   {item.label}
                 </div>
               </div>
