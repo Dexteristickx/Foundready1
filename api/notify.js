@@ -37,7 +37,7 @@ export default async function handler(req, res) {
       `;
 
     await resend.emails.send({
-      from: 'FoundReady <onboarding@resend.dev>',
+      from: 'FoundReady <talk@aasecretaries.com.ng>',
       to: 'talk@aasecretaries.com.ng',
       subject: subject,
       html: html,
