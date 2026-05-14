@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+const queryClient = new QueryClient();
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
