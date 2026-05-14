@@ -85,6 +85,24 @@ const ConsultationModal = ({ open, onClose, defaultTier = 2 }: ConsultationModal
 
         if (error) throw error;
 
+        // Trigger Email Notification
+        fetch('/api/notify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'consultation',
+            data: {
+              full_name: form.fullName,
+              email: form.email,
+              phone: form.phone,
+              business_name: form.businessName,
+              duration,
+              price,
+              notes: form.notes
+            }
+          })
+        }).catch(err => console.error('Notification error:', err));
+
         // Trigger payment
         initializePayment({ onSuccess, onClose: onClosePayment });
       } catch (error: any) {

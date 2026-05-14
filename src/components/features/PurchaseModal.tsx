@@ -95,6 +95,24 @@ const PurchaseModal = ({ open, onClose, tier = 1 }: PurchaseModalProps) => {
 
         if (error) throw error;
 
+        // Trigger Email Notification
+        fetch('/api/notify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'order',
+            data: {
+              full_name: form.fullName,
+              email: form.email,
+              phone: form.phone,
+              tier: tier,
+              company_name1: form.companyName1,
+              sector: form.sector,
+              notes: form.notes
+            }
+          })
+        }).catch(err => console.error('Notification error:', err));
+
         // Form saved, now trigger payment
         initializePayment({ onSuccess, onClose: onClosePayment });
       } catch (error: any) {
