@@ -7,7 +7,7 @@ import TierCards from '@/components/features/TierCards';
 import HowItWorks from '@/components/features/HowItWorks';
 import ConsultationSection from '@/components/features/ConsultationSection';
 import FAQSection from '@/components/features/FAQSection';
-import RegulatorsBanner from '@/components/features/RegulatorsBanner';
+import TrustSection from '@/components/features/TrustSection';
 import WhatsAppCTA from '@/components/features/WhatsAppCTA';
 import PurchaseModal from '@/components/features/PurchaseModal';
 import ConsultationModal from '@/components/features/ConsultationModal';
@@ -51,7 +51,7 @@ const Index = () => {
           onBookConsultation={() => handleBookConsultation(2)}
         />
 
-        <RegulatorsBanner />
+        <TrustSection />
 
         <TierCards
           onBuyTier0={() => handleBuyTier(0)}
