@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-[hsl(18,55%,12%)] text-white">
+    <footer className="bg-[hsl(21,41%,96%)] text-[hsl(18,33%,8%)] border-t border-[hsl(21,15%,90%)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -14,22 +14,22 @@ const Footer = () => {
               alt="FoundReady Logo" 
               className="h-16 w-auto object-contain self-start" 
             />
-            <p className="text-[10px] font-medium text-[hsl(25,20%,60%)] uppercase tracking-widest leading-none">
+            <p className="text-[10px] font-bold text-[hsl(18,33%,8%)] uppercase tracking-widest leading-none">
               Aviel Alpha Secretaries Limited
             </p>
           </div>
-            <p className="text-sm text-[hsl(25,15%,70%)] leading-relaxed max-w-xs">
+            <p className="text-sm text-[hsl(20,10%,40%)] leading-relaxed max-w-xs">
               Nigeria's Startup Legal & Compliance Pack. Get incorporated. Get documented. Get compliant.
             </p>
-            <div className="flex items-center gap-2 text-sm text-[hsl(25,15%,65%)]">
-              <MapPin size={14} className="text-[hsl(28,95%,52%)] shrink-0" />
+            <div className="flex items-center gap-2 text-sm text-[hsl(20,10%,40%)]">
+              <MapPin size={14} className="text-[hsl(21,96%,28%)] shrink-0" />
               <span>Abuja · Lagos · Ibadan</span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-[hsl(28,95%,52%)]">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-[hsl(21,96%,28%)]">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -42,7 +42,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <button
                     onClick={() => document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-sm text-[hsl(25,15%,70%)] hover:text-white transition-colors duration-200"
+                    className="text-sm text-[hsl(20,10%,40%)] hover:text-[hsl(21,96%,28%)] transition-colors duration-200"
                   >
                     {link.label}
                   </button>
@@ -52,78 +52,78 @@ const Footer = () => {
           </div>
           {/* Contact */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-[hsl(28,95%,52%)]">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-[hsl(21,96%,28%)]">
               Contact Us
             </h4>
             <div className="space-y-3">
               <a
                 href="mailto:talk@aasecretaries.com.ng"
-                className="flex items-center gap-2 text-sm text-[hsl(25,15%,70%)] hover:text-white transition-colors duration-200"
+                className="flex items-center gap-2 text-sm text-[hsl(20,10%,40%)] hover:text-[hsl(21,96%,28%)] transition-colors duration-200"
               >
-                <Mail size={14} className="text-[hsl(28,95%,52%)] shrink-0" />
+                <Mail size={14} className="text-[hsl(21,96%,28%)] shrink-0" />
                 talk@aasecretaries.com.ng
               </a>
               <a
                 href="https://wa.me/2347072752983"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-[hsl(25,15%,70%)] hover:text-white transition-colors duration-200"
+                className="flex items-center gap-2 text-sm text-[hsl(20,10%,40%)] hover:text-white transition-colors duration-200"
               >
-                <ExternalLink size={14} className="text-[hsl(28,95%,52%)] shrink-0" />
-                WhatsApp (Support)
+                <ExternalLink size={14} className="text-[hsl(21,96%,28%)] shrink-0" />
+                <span className="hover:text-[hsl(21,96%,28%)]">WhatsApp (Support)</span>
               </a>
               <a
                 href="https://wa.me/2349019011976"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-[hsl(25,15%,70%)] hover:text-white transition-colors duration-200"
+                className="flex items-center gap-2 text-sm text-[hsl(20,10%,40%)] hover:text-white transition-colors duration-200"
               >
-                <ExternalLink size={14} className="text-[hsl(28,95%,52%)] shrink-0" />
-                WhatsApp (Advisory)
+                <ExternalLink size={14} className="text-[hsl(21,96%,28%)] shrink-0" />
+                <span className="hover:text-[hsl(21,96%,28%)]">WhatsApp (Advisory)</span>
               </a>
               <a
                 href="https://www.aasecretaries.com.ng"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-[hsl(25,15%,70%)] hover:text-white transition-colors duration-200"
+                className="flex items-center gap-2 text-sm text-[hsl(20,10%,40%)] hover:text-white transition-colors duration-200"
               >
-                <ExternalLink size={14} className="text-[hsl(28,95%,52%)] shrink-0" />
-                www.aasecretaries.com.ng
+                <ExternalLink size={14} className="text-[hsl(21,96%,28%)] shrink-0" />
+                <span className="hover:text-[hsl(21,96%,28%)]">www.aasecretaries.com.ng</span>
               </a>
             </div>
           </div>
 
           {/* Bank Details */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-[hsl(28,95%,52%)]">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-[hsl(21,96%,28%)]">
               Direct Transfer
             </h4>
-            <div className="bg-[hsl(20,30%,18%)] p-4 rounded-lg border border-[hsl(20,30%,25%)] space-y-2">
-              <div className="flex justify-between items-center text-[10px] uppercase font-bold text-[hsl(25,10%,50%)]">
+            <div className="bg-white p-4 rounded-lg border border-[hsl(21,15%,90%)] shadow-sm space-y-2">
+              <div className="flex justify-between items-center text-[10px] uppercase font-bold text-[hsl(20,10%,50%)]">
                 <span>Bank</span>
-                <span className="text-white">Providus Bank</span>
+                <span className="text-[hsl(18,33%,8%)]">Providus Bank</span>
               </div>
-              <div className="flex justify-between items-center text-[10px] uppercase font-bold text-[hsl(25,10%,50%)]">
+              <div className="flex justify-between items-center text-[10px] uppercase font-bold text-[hsl(20,10%,50%)]">
                 <span>Account</span>
-                <span className="text-white">1307912069</span>
+                <span className="text-[hsl(18,33%,8%)]">1307912069</span>
               </div>
-              <div className="text-[10px] uppercase font-bold text-[hsl(25,10%,50%)]">
+              <div className="text-[10px] uppercase font-bold text-[hsl(20,10%,50%)]">
                 <span>Account Name</span>
-                <p className="text-[11px] text-white mt-1 leading-tight uppercase font-black">AVIEL-ALPHA SECRETARIES LIMITED</p>
+                <p className="text-[11px] text-[hsl(18,33%,8%)] mt-1 leading-tight uppercase font-black">AVIEL-ALPHA SECRETARIES LIMITED</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[hsl(20,30%,20%)] flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-[hsl(25,10%,50%)]">
+        <div className="mt-12 pt-8 border-t border-[hsl(21,15%,90%)] flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-[hsl(20,10%,50%)]">
             © 2026 Aviel Alpha Secretaries Limited. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/privacy-policy" className="text-xs text-[hsl(25,10%,50%)] hover:text-white transition-colors">
+            <Link to="/privacy-policy" className="text-xs text-[hsl(20,10%,50%)] hover:text-[hsl(21,96%,28%)] transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-of-service" className="text-xs text-[hsl(25,10%,50%)] hover:text-white transition-colors">
+            <Link to="/terms-of-service" className="text-xs text-[hsl(20,10%,50%)] hover:text-[hsl(21,96%,28%)] transition-colors">
               Terms of Service
             </Link>
           </div>
