@@ -14,7 +14,7 @@ const ConsultationSection = ({ onBookConsultation }: ConsultationSectionProps) =
     {
       icon: RefreshCw,
       title: 'Fee Redeemable',
-      desc: 'Full fee credited against any package within 30 days',
+      desc: 'Fee credited against Tiers 1, 2, or 3 within 30 days (Excludes Tier 0)',
     },
     {
       icon: Video,

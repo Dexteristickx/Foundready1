@@ -121,12 +121,12 @@ export const FAQS: FAQItem[] = [
   {
     question: 'Why do I need a consultation for Tier 2 and Tier 3?',
     answer:
-      'Because every sector has different legal requirements. The consultation ensures you get exactly the documents your business needs — not a generic pack.',
+      'Because every sector has different legal requirements. The consultation ensures you get exactly the documents your business needs — not a generic pack. The ₦100,000 fee is fully redeemable against Tiers 1, 2, or 3 (Excludes Tier 0).',
   },
   {
     question: 'What is the payment structure?',
     answer:
-      'Tier 0: 100% upfront. Tiers 1 & 2: 70% upon purchase, 30% on delivery. Tier 3: 50% to commence, 25% on submission, 25% on grant.',
+      'Tier 0: 100% upfront. Tiers 1 & 2: 70% upon purchase, 30% on delivery. Tier 3: 50% to commence, 25% on submission, 25% on grant. Note: Consultation fees are redeemable against Tiers 1–3 only.',
   },
   {
     question: 'I am already incorporated. Can I still use FoundReady?',

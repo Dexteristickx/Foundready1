@@ -197,7 +197,7 @@ const ConsultationModal = ({ open, onClose, defaultTier = 2 }: ConsultationModal
                   label="Package Interest"
                   value={form.tierInterest}
                   onChange={(v) => handleChange('tierInterest', v)}
-                  options={['0 — The Essentials Pack', '1 — The Pro Pack', '2 — Growth Pack', '3 — Regulatory Pack', "I'm not sure yet"]}
+                  options={['1 — The Pro Pack', '2 — Growth Pack', '3 — Regulatory Pack', "I'm not sure yet"]}
                   placeholder="Which tier?"
                 />
                 <SelectField
@@ -217,7 +217,7 @@ const ConsultationModal = ({ open, onClose, defaultTier = 2 }: ConsultationModal
               />
 
               <div className="bg-[hsl(25,30%,96%)] border border-[hsl(25,15%,88%)] rounded-lg p-4 text-xs text-[hsl(20,10%,40%)] leading-relaxed">
-                Consultation fee ({price}) is fully redeemable against any FoundReady package purchased within 30 days.
+                Consultation fee ({price}) is fully redeemable against Tiers 1, 2, or 3 purchased within 30 days (Excludes Tier 0).
                 Sessions are available via video call or in-person in Abuja, Lagos, or Ibadan.
               </div>
 
