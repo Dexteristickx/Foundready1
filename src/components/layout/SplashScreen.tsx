@@ -22,7 +22,7 @@ const SplashScreen = () => {
               ease: "easeOut"
             }
           }}
-          className="relative w-32 h-20 mb-6"
+          className="relative w-44 h-32 mb-8"
         >
           {/* Pulsing ring */}
           <motion.div
@@ -73,9 +73,6 @@ const SplashScreen = () => {
               <div className="h-full bg-[hsl(28,95%,52%)] w-full" />
             </motion.div>
           </div>
-          <p className="text-orange-100 text-xs mt-4 uppercase tracking-[0.2em] font-medium">
-            Aviel Alpha Secretaries
-          </p>
         </motion.div>
       </div>
     </motion.div>
