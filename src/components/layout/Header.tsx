@@ -44,7 +44,7 @@ const Header = () => {
             <img 
               src="/logo.png" 
               alt="FoundReady Logo" 
-              className="h-12 w-auto object-contain" 
+              className="h-8 w-auto object-contain" 
             />
           </div>
 
