@@ -38,13 +38,13 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-[70] bg-white/95 backdrop-blur-sm border-b border-[hsl(25,15%,88%)] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-28">
           {/* Logo */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 py-2">
             <img 
               src="/logo.png" 
               alt="FoundReady Logo" 
-              className="h-14 w-auto object-contain" 
+              className="h-16 lg:h-20 w-auto object-contain" 
             />
           </div>
 
