@@ -6,13 +6,13 @@
   :root {
     /* Brand Colors - Matching New Logo */
     --background: 0 0% 100%;
-    --foreground: 18 33% 8%; /* Dark Brown from Logo */
+    --foreground: 0 0% 0%; /* Pure Black from Logo */
 
     --card: 0 0% 100%;
-    --card-foreground: 18 33% 8%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 18 33% 8%;
+    --popover-foreground: 0 0% 0%;
 
     /* Burnt Orange Primary - Exactly Logo */
     --primary: 21 96% 28%;
