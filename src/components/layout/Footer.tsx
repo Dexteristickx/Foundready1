@@ -1,4 +1,5 @@
 import { Mail, MapPin, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -120,12 +121,12 @@ const Footer = () => {
             © 2026 Aviel Alpha Secretaries Limited. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <button className="text-xs text-[hsl(25,10%,50%)] hover:text-white transition-colors">
+            <Link to="/privacy-policy" className="text-xs text-[hsl(25,10%,50%)] hover:text-white transition-colors">
               Privacy Policy
-            </button>
-            <button className="text-xs text-[hsl(25,10%,50%)] hover:text-white transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="text-xs text-[hsl(25,10%,50%)] hover:text-white transition-colors">
               Terms of Service
-            </button>
+            </Link>
           </div>
         </div>
       </div>
