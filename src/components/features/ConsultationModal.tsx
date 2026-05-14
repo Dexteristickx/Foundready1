@@ -47,7 +47,20 @@ const ConsultationModal = ({ open, onClose, defaultTier = 2 }: ConsultationModal
       try {
         const { error } = await supabase
           .from('inquiries')
-          .insert([{ ...form, duration, price, submitted_at: new Date().toISOString() }]);
+          .insert([{
+            full_name: form.fullName,
+            phone: form.phone,
+            email: form.email,
+            business_name: form.businessName,
+            sector: form.sector,
+            state: form.state,
+            stage: form.stage,
+            tier_interest: form.tierInterest,
+            notes: form.notes,
+            duration,
+            price,
+            submitted_at: new Date().toISOString()
+          }]);
 
         if (error) throw error;
 

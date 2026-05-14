@@ -49,12 +49,27 @@ const PurchaseModal = ({ open, onClose, tier = 1 }: PurchaseModalProps) => {
     
     const submitData = async () => {
       try {
-        // Create a copy of the form without the unused 'companyName' field
-        const { companyName, ...formData } = form;
-        
         const { error } = await supabase
           .from('orders')
-          .insert([{ ...formData, tier, submitted_at: new Date().toISOString() }]);
+          .insert([{
+            full_name: form.fullName,
+            phone: form.phone,
+            email: form.email,
+            company_name1: form.companyName1,
+            company_name2: form.companyName2,
+            company_name3: form.companyName3,
+            sector: form.sector,
+            state: form.state,
+            stage: form.stage,
+            business_objects: form.businessObjects,
+            director1: form.director1,
+            share_structure: form.shareStructure,
+            brand_name: form.brandName,
+            trademark_class: form.trademarkClass,
+            notes: form.notes,
+            tier: tier,
+            submitted_at: new Date().toISOString()
+          }]);
 
         if (error) throw error;
 
