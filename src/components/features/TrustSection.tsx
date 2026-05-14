@@ -1,9 +1,25 @@
 const TrustSection = () => {
   const trustItems = [
-    { name: "CAC", label: "Corporate Affairs Commission", description: "Accredited Agents" },
-    { name: "NBA", label: "Nigerian Bar Association", description: "Legal Practitioners" },
-    { name: "FIRS", label: "Federal Inland Revenue", description: "Tax Compliance" },
-    { name: "Paystack", label: "Secure Payments", description: "PCI-DSS Certified" },
+    { 
+      name: "CAC", 
+      label: "Accredited Agents", 
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Corporate_Affairs_Commission_Logo.png/220px-Corporate_Affairs_Commission_Logo.png" 
+    },
+    { 
+      name: "NBA", 
+      label: "Legal Practitioners", 
+      logo: "https://nigerianbar.org.ng/wp-content/uploads/2021/11/NBA-Logo-Small.png" 
+    },
+    { 
+      name: "FIRS", 
+      label: "Tax Compliance", 
+      logo: "https://upload.wikimedia.org/wikipedia/en/2/2a/FIRS_Logo.png" 
+    },
+    { 
+      name: "Paystack", 
+      label: "Secure Payments", 
+      logo: "https://paystack.com/assets/img/login/paystack-logo.png" 
+    },
   ];
 
   return (
@@ -21,14 +37,22 @@ const TrustSection = () => {
           </div>
 
           {/* Badges Grid */}
-          <div className="flex flex-wrap justify-center md:justify-end items-center gap-8 md:gap-16 opacity-60">
+          <div className="flex flex-wrap justify-center md:justify-end items-center gap-8 md:gap-16">
             {trustItems.map((item) => (
               <div 
                 key={item.name} 
-                className="flex flex-col items-center group transition-all duration-300 hover:opacity-100"
+                className="flex flex-col items-center group transition-all duration-300"
               >
-                <div className="text-2xl font-black text-[hsl(20,10%,20%)] tracking-tighter mb-1 select-none">
-                  {item.name}
+                <div className="h-12 w-auto mb-2 flex items-center justify-center">
+                  <img 
+                    src={item.logo} 
+                    alt={item.name} 
+                    className="h-full w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = 'none';
+                      (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="text-xl font-black">${item.name}</span>`;
+                    }}
+                  />
                 </div>
                 <div className="text-[10px] uppercase font-bold tracking-widest text-[hsl(25,10%,50%)] group-hover:text-[hsl(28,95%,52%)] transition-colors">
                   {item.label}
