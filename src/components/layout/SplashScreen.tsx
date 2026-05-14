@@ -8,9 +8,9 @@ const SplashScreen = () => {
         opacity: 0,
         transition: { duration: 0.8, ease: "easeInOut" }
       }}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[hsl(20,85%,12%)]"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-[hsl(21,96%,15%)]"
     >
-      <div className="relative flex flex-col items-center">
+      <div className="relative flex flex-col items-center w-full max-w-lg px-4">
         {/* Animated Logo Container */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
@@ -22,20 +22,20 @@ const SplashScreen = () => {
               ease: "easeOut"
             }
           }}
-          className="relative w-44 h-32 mb-8"
+          className="relative w-64 sm:w-80 h-40 sm:h-48 mb-12"
         >
-          {/* Pulsing ring */}
+          {/* Subtle Background Glow */}
           <motion.div
             animate={{ 
-              scale: [1, 1.1, 1],
-              opacity: [0.2, 0.05, 0.2]
+              scale: [1, 1.15, 1],
+              opacity: [0.2, 0.1, 0.2]
             }}
             transition={{ 
-              duration: 2, 
+              duration: 3, 
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute inset-0 rounded-xl bg-white/5"
+            className="absolute inset-0 rounded-3xl bg-white/5 blur-2xl"
           />
           
           {/* The Logo */}
@@ -54,29 +54,28 @@ const SplashScreen = () => {
             opacity: 1,
             transition: { delay: 0.5, duration: 0.8 }
           }}
-          className="text-center"
+          className="text-center w-full"
         >
-          <h1 className="text-white text-3xl font-bold tracking-tight mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Found<span className="text-[hsl(28,95%,52%)]">Ready</span>
+          <h1 className="text-white text-5xl sm:text-7xl font-black tracking-tighter mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif" }}>
+            Found<span className="text-[hsl(21,96%,45%)]">Ready</span>
           </h1>
-          <div className="flex items-center gap-2 justify-center">
-            <motion.div
-              animate={{ 
-                width: ["0%", "100%"],
-              }}
-              transition={{ 
-                duration: 2,
-                ease: "easeInOut"
-              }}
-              className="h-[2px] bg-[hsl(28,95%,52%)]/40 w-24 overflow-hidden"
-            >
-              <div className="h-full bg-[hsl(28,95%,52%)] w-full" />
-            </motion.div>
+          
+          <div className="flex items-center justify-center px-8">
+            <div className="h-[4px] bg-white/10 w-full max-w-md rounded-full overflow-hidden">
+              <motion.div
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ 
+                  duration: 2.5,
+                  ease: "easeInOut"
+                }}
+                className="h-full bg-[hsl(21,96%,45%)] shadow-[0_0_15px_rgba(215,85,28,0.5)]"
+              />
+            </div>
           </div>
         </motion.div>
       </div>
     </motion.div>
   );
 };
-
 export default SplashScreen;
