@@ -11,9 +11,9 @@ const TrustSection = () => {
       logo: "https://nigerianbar.org.ng/wp-content/uploads/2021/11/NBA-Logo-Small.png" 
     },
     { 
-      name: "FIRS", 
-      label: "Tax Compliance", 
-      logo: "https://upload.wikimedia.org/wikipedia/en/2/2a/FIRS_Logo.png" 
+      name: "NIRS", 
+      label: "Nigeria Revenue Service", 
+      logo: "/nirs.png" 
     },
     { 
       name: "Paystack", 
