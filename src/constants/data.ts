@@ -39,7 +39,6 @@ export const TIERS: Tier[] = [
       "Shareholders' Agreement",
       'Terms & Conditions / Terms of Use',
       'Privacy Policy (NDPA 2023 compliant)',
-      'Employment Contract Template',
       'Trademark Registration — 1 class',
     ],
   },
@@ -102,7 +101,7 @@ export const FAQS: FAQItem[] = [
   {
     question: 'What is included in Tier 1 (Pro Pack)?',
     answer:
-      'CAC incorporation, MEMART, Founders\' & Shareholders\' Agreement, Terms & Conditions, Privacy Policy (NDPA-compliant), NDA, Employment Contract template, and trademark registration in one class — all for ₦1,000,000.',
+      'CAC incorporation, MEMART, Founders\' & Shareholders\' Agreement, Terms & Conditions, Privacy Policy (NDPA-compliant), NDA, and trademark registration in one class — all for ₦1,000,000.',
   },
   {
     question: 'Are government fees included?',
