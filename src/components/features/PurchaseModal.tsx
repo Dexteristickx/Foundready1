@@ -3,6 +3,7 @@ import { X, CheckCircle, Loader2 } from 'lucide-react';
 import { NIGERIAN_STATES, BUSINESS_SECTORS } from '@/constants/data';
 import { toast } from 'sonner';
 import { supabase } from '@/lib/supabase';
+import { usePaystackPayment } from 'react-paystack';
 
 interface PurchaseModalProps {
   open: boolean;
@@ -39,6 +40,27 @@ const PurchaseModal = ({ open, onClose, tier = 1 }: PurchaseModalProps) => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
+  const amount = tier === 0 ? 250000 : 700000;
+  
+  const config = {
+    reference: (new Date()).getTime().toString(),
+    email: form.email,
+    amount: amount * 100, // Paystack uses Kobo
+    publicKey: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY || 'pk_test_placeholder',
+  };
+
+  const initializePayment = usePaystackPayment(config);
+
+  const onSuccess = () => {
+    setStep('success');
+    toast.success('Payment successful!');
+  };
+
+  const onClosePayment = () => {
+    toast.error('Payment cancelled. Please complete payment to proceed.');
+    setStep('form');
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!form.fullName || !form.email || !form.phone || !form.companyName1 || !form.sector) {
@@ -73,13 +95,12 @@ const PurchaseModal = ({ open, onClose, tier = 1 }: PurchaseModalProps) => {
 
         if (error) throw error;
 
-        setStep('success');
-        toast.success('Purchase initiated successfully!');
+        // Form saved, now trigger payment
+        initializePayment({ onSuccess, onClose: onClosePayment });
       } catch (error: any) {
         console.error('Error submitting order:', error);
-        setStep('success');
         toast.error(`Purchase failed: ${error.message || 'Unknown error'}`);
-        toast.success('Proceeding in Demo Mode...');
+        setStep('form');
       }
     };
 

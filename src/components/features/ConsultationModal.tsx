@@ -3,6 +3,7 @@ import { X, CheckCircle, Loader2 } from 'lucide-react';
 import { NIGERIAN_STATES, BUSINESS_SECTORS } from '@/constants/data';
 import { toast } from 'sonner';
 import { supabase } from '@/lib/supabase';
+import { usePaystackPayment } from 'react-paystack';
 
 interface ConsultationModalProps {
   open: boolean;
@@ -29,7 +30,27 @@ const ConsultationModal = ({ open, onClose, defaultTier = 2 }: ConsultationModal
 
   if (!open) return null;
 
+  const priceVal = duration === '30' ? 75000 : 100000;
   const price = duration === '30' ? '₦75,000' : '₦100,000';
+
+  const config = {
+    reference: (new Date()).getTime().toString(),
+    email: form.email,
+    amount: priceVal * 100,
+    publicKey: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY || 'pk_test_placeholder',
+  };
+
+  const initializePayment = usePaystackPayment(config);
+
+  const onSuccess = () => {
+    setStep('success');
+    toast.success('Consultation booked and paid!');
+  };
+
+  const onClosePayment = () => {
+    toast.error('Payment cancelled. Please complete payment to book your slot.');
+    setStep('form');
+  };
 
   const handleChange = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -64,13 +85,12 @@ const ConsultationModal = ({ open, onClose, defaultTier = 2 }: ConsultationModal
 
         if (error) throw error;
 
-        setStep('success');
-        toast.success('Consultation booking received!');
+        // Trigger payment
+        initializePayment({ onSuccess, onClose: onClosePayment });
       } catch (error: any) {
         console.error('Error submitting inquiry:', error);
-        setStep('success');
         toast.error(`Booking failed: ${error.message || 'Unknown error'}`);
-        toast.success('Proceeding in Demo Mode...');
+        setStep('form');
       }
     };
 
